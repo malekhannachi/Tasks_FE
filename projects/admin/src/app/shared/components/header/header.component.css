@@ -1,0 +1,17 @@
+nav {
+  background-color: #ca085a;
+}
+.navbar-brand {
+  font-size: 27px;
+  font-weight: bold;
+  color: #e3d510 ;
+}
+a {
+  font-size: 20px;
+  color: #fff ;
+  padding: 5px 20px;
+}
+a.active {
+  background-color: #910340;
+  color: #fff;
+}
