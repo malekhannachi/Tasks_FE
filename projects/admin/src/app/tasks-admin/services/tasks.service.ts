@@ -21,4 +21,8 @@ export class TasksService {
   addTask(model: any) {
     return this.http.post(this.apiTasks + 'add-task', model);
   }
+
+  deleteTask(id: string) {
+    return this.http.delete(this.apiTasks + 'delete-task/' + id);
+  }
 }

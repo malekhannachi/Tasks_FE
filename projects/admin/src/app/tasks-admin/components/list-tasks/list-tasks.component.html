@@ -44,12 +44,12 @@
                     <td>{{i+1}}</td>
                     <td><img [src]="'https://crud-tasks-nzcw.onrender.com/'+item.image" height="100px" alt="not found"></td>
                     <td>{{item.title}}</td>
-                    <td>{{item.userId.username}}</td>
+                    <td>{{item.user}}</td>
                     <td>{{item.deadline}}</td>
                     <td>{{item.status}}</td>
                    
                     <td><button class="btn btn-warning mx-2">Update</button><button
-                            class="btn btn-danger">Delete</button></td>
+                            class="btn btn-danger" (click)="deleteTask(item)">Delete</button></td>
                 </tr>
 
 
