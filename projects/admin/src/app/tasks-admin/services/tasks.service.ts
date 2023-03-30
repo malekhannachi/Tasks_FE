@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TasksService {
-  apiTasks = 'https://crud-tasks-nzcw.onrender.com/tasks/all-tasks';
+  apiTasks = 'https://crud-tasks-nzcw.onrender.com/tasks/';
 
   constructor(private http: HttpClient) {}
 
@@ -15,6 +15,10 @@ export class TasksService {
     // headers = headers.append('Authorization','Bearer '+  localStorage.getItem('token')!);
     // return this.http.get(this.apiTasks, { headers: headers });
 
-    return this.http.get(this.apiTasks);
+    return this.http.get(this.apiTasks + 'all-tasks');
+  }
+
+  addTask(model: any) {
+    return this.http.post(this.apiTasks + 'add-task', model);
   }
 }

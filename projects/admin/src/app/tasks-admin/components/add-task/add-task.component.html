@@ -1,2 +1,62 @@
 <app-header></app-header>
-<div class="container mt-4"></div>
+<div class="container mt-4">
+    <div class="col">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-info">Add new Task </h6>
+            </div>
+
+
+            <div class="card-body">
+                <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group mt-2">
+                        <label for="titre">Title : </label>
+                        <input type="text" class="form-control" placeholder="enter title" formControlName="title">
+
+
+                    </div>
+                    <div class="form-group mt-2"><select class="form-select" aria-label="Default select example"
+                            formControlName="user">
+                            <option selected hidden value="">By User </option>
+                            <option [value]="item.id" *ngFor="let item of users">{{item.name}}</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="titre">Select Image : </label>
+                        <input type="file" (change)="SelectImage($event)" class="form-control" accept="/image">
+
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="titre">Deadline date : </label>
+                        <input type="date" class="form-control" formControlName="date">
+
+
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="titre" for="description">Description : </label>
+
+
+                        <textarea class="form-control" id="description" rows="3" placeholder="enter description"
+                            formControlName="description"></textarea>
+                    </div>
+
+
+
+
+
+                    <button type="submit" class="btn btn-sm btn-info mt-3">Create</button>
+                </form>
+
+            </div>
+            <div class="text-center" *ngIf="loading">
+                <app-spinner></app-spinner>
+            </div>
+        </div>
+    </div>
+
+</div>

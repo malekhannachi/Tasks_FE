@@ -7,9 +7,12 @@ import { TasksService } from '../../services/tasks.service';
   styleUrls: ['./list-tasks.component.css'],
 })
 export class ListTasksComponent {
+  tasks: any;
+
   constructor(private service: TasksService) {
-    this.service.getAllTasks().subscribe((res) => {
+    this.service.getAllTasks().subscribe((res: any) => {
       console.log(res);
+      this.tasks = res.tasks;
     });
   }
 }
